@@ -1,6 +1,6 @@
 {
     "name": "seqlock",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "repo": "goodcleanfun/seqlock",
     "description": "Sequence locks for situations where reads are much more common than writes, while avoiding the problem of writer starvation",
     "keywords": ["seqlock", "sequence lock", "lock"],
