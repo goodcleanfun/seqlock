@@ -1,0 +1,18 @@
+{
+    "name": "seqlock",
+    "version": "0.0.0",
+    "repo": "goodcleanfun/seqlock",
+    "description": "Sequence locks for situations where reads are much more common than writes, while avoiding the problem of writer starvation",
+    "keywords": ["seqlock", "sequence lock", "lock"],
+    "license": "MIT",
+    "dependencies": {
+        "goodcleanfun/spinlock": "*"
+    },
+    "development": {
+        "silentbicycle/greatest": "*",
+        "goodcleanfun/threading": "*"
+    },
+    "src": [
+        "src/seqlock.h"
+    ]
+  }
