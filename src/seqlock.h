@@ -1,6 +1,9 @@
 #ifndef SEQLOCK_H
 #define SEQLOCK_H
 
+#include <stdint.h>
+#include <stdlib.h>
+#include <stdbool.h>
 #include <stdatomic.h>
 #include "cpu_relax/cpu_relax.h"
 #include "spinlock/spinlock.h"
