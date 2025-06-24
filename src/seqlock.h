@@ -17,8 +17,7 @@ typedef struct seqlock {
 
 static inline void seqlock_init(seqlock_t *seqlock) {
     atomic_init(&seqlock->sequence, 0);
-    spinlock_t lock = SPINLOCK_INIT;
-    seqlock->lock = lock;
+    spinlock_init(&seqlock->lock);
 }
 
 static inline void seqlock_write_lock(seqlock_t *seqlock) {
@@ -35,7 +34,7 @@ static inline void seqlock_write_unlock(seqlock_t *seqlock) {
     spinlock_unlock(&seqlock->lock);
 }
 
-static inline uint64_t seqlock_read_sequence(seqlock_t *seqlock) {
+static inline uint64_t seqlock_read(seqlock_t *seqlock) {
     while (1) {
         atomic_uint_fast64_t start = atomic_load(&seqlock->sequence);
         // if sequence is odd, a write is in progress

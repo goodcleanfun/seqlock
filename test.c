@@ -34,7 +34,7 @@ int increment_counter_thread(void *arg) {
 int read_counter_thread(void *arg) {
     int last_counter = -1;
     while (1) {
-        uint64_t sequence = seqlock_read_sequence(&seqlock);
+        uint64_t sequence = seqlock_read(&seqlock);
         if (last_counter != counter && seqlock_read_is_valid(&seqlock, sequence)) {
             last_counter = counter;
         }
